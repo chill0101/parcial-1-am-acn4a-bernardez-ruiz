@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -23,50 +24,61 @@
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
             android:src="@drawable/bg_loop" />
+
     </FrameLayout>
 
     <!-- Contenido arriba de todo encima -->
     <LinearLayout
         android:id="@+id/content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
+        android:layout_height="730dp"
         android:gravity="center"
+        android:orientation="vertical"
         android:padding="24dp">
 
         <!-- Título con efecto neon bastante loco -->
+        <ImageView
+            android:id="@+id/titleIcon"
+            android:layout_width="256dp"
+            android:layout_height="256dp"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/reactio_logo" />
+
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="32dp">
+
+            <!-- Iconito arriba del título -->
 
             <!-- Capa del borde / glow -->
             <TextView
                 android:id="@+id/tvTituloStroke"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="REACT IO"
-                android:textSize="52sp"
-                android:textStyle="bold"
-                android:textColor="#9D00FF"
                 android:shadowColor="#B000FF"
                 android:shadowDx="0"
                 android:shadowDy="0"
-                android:shadowRadius="32" />
+                android:shadowRadius="32"
+                android:text="REACT IO"
+                android:textColor="#9D00FF"
+                android:textSize="52sp"
+                android:textStyle="bold" />
 
             <!-- Capa del relleno blanco -->
             <TextView
                 android:id="@+id/tvTitulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="REACT IO"
-                android:textSize="52sp"
-                android:textStyle="bold"
-                android:textColor="#FFFFFF"
                 android:shadowColor="#B000FF"
                 android:shadowDx="0"
                 android:shadowDy="0"
-                android:shadowRadius="24" />
+                android:shadowRadius="24"
+                android:text="REACT IO"
+                android:textColor="#FFFFFF"
+                android:textSize="52sp"
+                android:textStyle="bold" />
         </FrameLayout>
 
         <!-- Botoncito -->
@@ -74,12 +86,16 @@
             android:id="@+id/btnEmpezar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="¡Empezá!"
-            android:textSize="20sp"
+            android:background="@drawable/button_bg"
+            android:backgroundTint="@null"
+            app:backgroundTint="@null"
+            android:elevation="28dp"
             android:paddingLeft="32dp"
-            android:paddingRight="32dp"
             android:paddingTop="12dp"
-            android:paddingBottom="12dp"/>
+            android:paddingRight="32dp"
+            android:paddingBottom="12dp"
+            android:text="¡Empezá!"
+            android:textSize="20sp" />
     </LinearLayout>
 
 </FrameLayout>
