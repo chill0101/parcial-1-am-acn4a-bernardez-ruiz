@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Configurar animación después de que el layout mida la pantalla
+        // TODO: Extract this to a reusable class e.e
         bgContainer.post(() -> {
             int screenW = getResources().getDisplayMetrics().widthPixels;
 
