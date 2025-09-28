@@ -67,7 +67,7 @@
             android:background="@drawable/button_bg"
             app:backgroundTint="@null"
             android:backgroundTint="@null"
-            android:text="PRESIONAR RÁPIDO!"
+            android:text="PRESIONAR EL BOTÓN!"
             android:layout_marginBottom="16dp"
             android:gravity="center_vertical"
             />

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +14,7 @@ import java.util.Random;
 public class ReactionGameActivity extends AppCompatActivity {
 
     private Button startButton, tapButton;
+    private ImageButton restartButton, homeButton;
     private TextView resultText;
     private Handler handler = new Handler();
     private long startTime;
@@ -26,10 +28,16 @@ public class ReactionGameActivity extends AppCompatActivity {
         startButton = findViewById(R.id.startButton);
         tapButton = findViewById(R.id.tapButton);
         resultText = findViewById(R.id.resultText);
+        restartButton = findViewById(R.id.restartButton);
+        homeButton = findViewById(R.id.homeButton);
 
         tapButton.setVisibility(View.INVISIBLE);
+        restartButton.setVisibility(View.INVISIBLE);
+        homeButton.setVisibility(View.INVISIBLE);
 
         startButton.setOnClickListener(v -> startGame());
+        homeButton.setOnClickListener(v -> finish());
+        restartButton.setOnClickListener(v -> startGame());
         tapButton.setOnClickListener(v -> tapNow());
     }
 
@@ -37,6 +45,8 @@ public class ReactionGameActivity extends AppCompatActivity {
         resultText.setText("Espera...");
         startButton.setVisibility(View.INVISIBLE);
         tapButton.setVisibility(View.INVISIBLE);
+        restartButton.setVisibility(View.INVISIBLE);
+        homeButton.setVisibility(View.INVISIBLE);
 
         int delay = new Random().nextInt(3000) + 2000; // 2 a 5 seg
         waiting = true;
@@ -54,7 +64,8 @@ public class ReactionGameActivity extends AppCompatActivity {
             long reactionTime = System.currentTimeMillis() - startTime;
             resultText.setText("Tu tiempo: " + reactionTime + " ms");
             tapButton.setVisibility(View.INVISIBLE);
-            startButton.setVisibility(View.VISIBLE);
+            restartButton.setVisibility(View.VISIBLE);
+            homeButton.setVisibility(View.VISIBLE);
         } else {
             resultText.setText("¡Muy temprano!");
         }
