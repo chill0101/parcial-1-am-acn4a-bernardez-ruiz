@@ -1,7 +1,30 @@
 <resources>
-    <string name="app_name">react_io</string>
-    <string name="home">home</string>
-    <string name="restart" />
-    <string name="tocar">TOCAR!</string>
+    <!-- Titles -->
+    <string name="app_name">React.io</string>
+    <string name="menu_title">DESAFÍOS</string>
+
+    <!-- Buttons -->
     <string name="empezar">Empezar</string>
+    <string name="tocar">TOCAR!</string>
+
+
+
+
+    <!-- Game list -->
+    <string name="game1">PRESIONAR EL BOTÓN!</string>
+    <string name="game2">JUEGO 2</string>
+    <string name="game3">JUEGO 3</string>
+
+
+    <!-- Messages -->
+    <string name="in_development_message">Estamos trabajando duro para lanzar este juego. Mientras tanto, podés disfrutar de los demás!</string>
+    <string name="reaction_game_buttongame_instructions">Cuando aparezca el botón ROJO: \nPresionalo lo más rápido que puedas!</string>
+
+    <!-- Content Description -->
+    <string name="home">Botón para volver al inicio</string>
+    <string name="restart">Reintentar juego</string>
+    <string name="user_settings">Configuración de usuario</string>
+    <string name="background_gradient">Fondo con colores gradientes</string>
+    <string name="working_on_it">Imagen de peresozo trabajando</string>
+
 </resources>

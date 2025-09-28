@@ -5,37 +5,38 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="24dp"
+    android:padding="@dimen/padding_large"
     android:background="@drawable/bg_gradient_darker">
 
 
     <ImageView
         android:id="@+id/titleIcon"
-        android:layout_width="256dp"
-        android:layout_height="256dp"
+        android:layout_width="@dimen/image_size_large"
+        android:layout_height="@dimen/image_size_large"
         android:layout_gravity="center_horizontal|top"
-        android:layout_marginBottom="8dp"
-        android:src="@drawable/reactio_working_on_it" />
+        android:layout_marginBottom="@dimen/margin_small"
+        android:src="@drawable/reactio_working_on_it"
+        android:contentDescription="@string/working_on_it"/>
     <TextView
         android:id="@+id/resultText"
-        android:layout_width="330dp"
+        android:layout_width="@dimen/text_width_max"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="@dimen/margin_medium"
         android:gravity="center"
-        android:text="Estamos trabajando duro para lanzar este juego. Mientras tanto, podés disfrutar de los demás!"
+        android:text="@string/in_development_message"
         android:textColor="#FFFFFF"
-        android:textSize="20sp" />
+        android:textSize="@dimen/text_size_regular" />
 
     <ImageButton
         android:id="@+id/homeButton"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
         android:background="@drawable/button_bg"
         android:backgroundTint="@null"
-        android:contentDescription="home"
+        android:contentDescription="@string/home"
         android:src="@drawable/ic_home"
         android:scaleType="centerInside"
-        android:padding="8dp"
+        android:padding="@dimen/padding_small"
         app:backgroundTint="@null" />
 
 

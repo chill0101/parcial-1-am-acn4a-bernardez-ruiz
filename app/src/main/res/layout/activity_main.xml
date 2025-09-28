@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Fondo animado -->
+    <!-- Bg loop background - animation in MainActivity -->
     <FrameLayout
         android:id="@+id/bgContainer"
         android:layout_width="match_parent"
@@ -27,32 +27,32 @@
 
     </FrameLayout>
 
-    <!-- Contenido arriba de todo encima -->
+    <!-- Top content -->
     <LinearLayout
         android:id="@+id/content"
         android:layout_width="match_parent"
-        android:layout_height="730dp"
+        android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="@dimen/padding_large">
 
-        <!-- Título con efecto neon bastante loco -->
         <ImageView
             android:id="@+id/titleIcon"
-            android:layout_width="256dp"
-            android:layout_height="256dp"
+            android:layout_width="@dimen/image_size_large"
+            android:layout_height="@dimen/image_size_large"
             android:layout_gravity="center_horizontal|top"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="@dimen/margin_small"
             android:src="@drawable/reactio_logo" />
 
+        <!-- neon text loquito -->
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp">
+            android:layout_marginBottom="@dimen/margin_xlarge">
 
-            <!-- Iconito arriba del título -->
 
-            <!-- Capa del borde / glow -->
+
+            <!-- border layer / glow -->
             <TextView
                 android:id="@+id/tvTituloStroke"
                 android:layout_width="wrap_content"
@@ -61,12 +61,12 @@
                 android:shadowDx="0"
                 android:shadowDy="0"
                 android:shadowRadius="32"
-                android:text="React.io"
+                android:text="@string/app_name"
                 android:textColor="#9D00FF"
-                android:textSize="52sp"
+                android:textSize="@dimen/text_size_title1"
                 android:textStyle="bold" />
 
-            <!-- Capa del relleno blanco -->
+            <!-- inner layer / white -->
             <TextView
                 android:id="@+id/tvTitulo"
                 android:layout_width="wrap_content"
@@ -75,9 +75,9 @@
                 android:shadowDx="0"
                 android:shadowDy="0"
                 android:shadowRadius="24"
-                android:text="React.io"
+                android:text="@string/app_name"
                 android:textColor="#FFFFFF"
-                android:textSize="52sp"
+                android:textSize="@dimen/text_size_title1"
                 android:textStyle="bold" />
         </FrameLayout>
 
@@ -90,12 +90,12 @@
             android:backgroundTint="@null"
             app:backgroundTint="@null"
             android:elevation="28dp"
-            android:paddingLeft="32dp"
-            android:paddingTop="12dp"
-            android:paddingRight="32dp"
-            android:paddingBottom="12dp"
-            android:text="¡Empezá!"
-            android:textSize="20sp" />
+            android:paddingLeft="@dimen/padding_xlarge"
+            android:paddingTop="@dimen/padding_medium"
+            android:paddingRight="@dimen/padding_xlarge"
+            android:paddingBottom="@dimen/padding_medium"
+            android:text="@string/empezar"
+            android:textSize="@dimen/text_size_regular" />
     </LinearLayout>
 
 </FrameLayout>

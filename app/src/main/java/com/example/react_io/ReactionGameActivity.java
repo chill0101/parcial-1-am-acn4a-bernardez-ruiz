@@ -67,13 +67,14 @@ public class ReactionGameActivity extends AppCompatActivity {
             restartButton.setVisibility(View.VISIBLE);
             homeButton.setVisibility(View.VISIBLE);
         } else {
-            resultText.setText("¡Muy temprano!");
+            resultText.setText("Algo hiciste mal ._.");
         }
     }
 }
 
-// TODO: AGREGAR BOTON PA OLVER ATRAS, POR QUE SINO TENES QUE CERRAR LA APP MIRA QUE OPORTUNO JAJAJA
-// TODO: CAMBIAR COLORES EN VEZ DEL BOTON NO ME GUSTA.
+// TODO: AGREGAR BOTON PA OLVER ATRAS, POR QUE SINO TENES QUE CERRAR LA APP MIRA QUE OPORTUNO JAJAJA // DONE
 // TODO:  QUE GUARDE LAST TIME, POR QUE SINO MUCHO SENTIDO NO TIENE, ESTARIA BUENO PONER UN RAKING NO TIPO RPEFEDIFINIDOS PARA QUE TE DE UNA MEDALLA IDK
 // TODO: NO INMOLARME
+
+// TODO: Implement color logic instead button
 
