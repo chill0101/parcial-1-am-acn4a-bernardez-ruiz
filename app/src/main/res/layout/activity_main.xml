@@ -16,14 +16,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/bg_loop" />
+            android:src="@drawable/bg_loop3" />
 
         <ImageView
             android:id="@+id/bg2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/bg_loop" />
+            android:src="@drawable/bg_loop3" />
 
     </FrameLayout>
 
@@ -61,7 +61,7 @@
                 android:shadowDx="0"
                 android:shadowDy="0"
                 android:shadowRadius="32"
-                android:text="REACT IO"
+                android:text="React.io"
                 android:textColor="#9D00FF"
                 android:textSize="52sp"
                 android:textStyle="bold" />
@@ -75,7 +75,7 @@
                 android:shadowDx="0"
                 android:shadowDy="0"
                 android:shadowRadius="24"
-                android:text="REACT IO"
+                android:text="React.io"
                 android:textColor="#FFFFFF"
                 android:textSize="52sp"
                 android:textStyle="bold" />

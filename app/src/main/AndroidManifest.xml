@@ -23,6 +23,10 @@
             android:name=".ReactionGameActivity"
             android:exported="false" />
 
+        <!-- Pantalla de "En desarrollo" -->
+        <activity android:name=".InDevelopmentActivity"
+            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

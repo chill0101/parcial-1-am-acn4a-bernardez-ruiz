@@ -1,38 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     android:padding="24dp"
     android:background="@drawable/bg_gradient_darker">
 
     <TextView
         android:id="@+id/resultText"
-        android:layout_width="wrap_content"
+        android:layout_width="330dp"
         android:layout_height="wrap_content"
-        android:text="Juego de Reacción"
+        android:layout_marginTop="312dp"
+        android:gravity="center"
+        android:text="Cuando el botón se ponga rojo: presionalo lo más rápido que puedas!"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        android:layout_marginBottom="20dp"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/startButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:background="@drawable/button_bg"
         android:backgroundTint="@null"
+        android:text="@string/empezar"
         app:backgroundTint="@null"
-        android:text="Empezar" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/resultText" />
 
     <Button
         android:id="@+id/tapButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/button_bg"
-        android:backgroundTint="@null"
+        android:backgroundTint="@color/design_default_color_error"
         app:backgroundTint="@null"
-        android:text="¡Toca!"
-        android:visibility="gone"/>
-</LinearLayout>
+        android:text="@string/tocar"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/startButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/bottomButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tapButton"
+        app:layout_constraintVertical_bias="0.915">
+
+        <ImageButton
+            android:id="@+id/restartButton"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginEnd="124dp"
+            android:background="@drawable/button_bg"
+            android:backgroundTint="@null"
+            android:contentDescription="@string/restart"
+            android:padding="8dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_again"
+            app:backgroundTint="@null" />
+
+        <ImageButton
+            android:id="@+id/homeButton"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@drawable/button_bg"
+            android:backgroundTint="@null"
+            android:contentDescription="@string/home"
+            android:padding="8dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_home"
+            app:backgroundTint="@null" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
