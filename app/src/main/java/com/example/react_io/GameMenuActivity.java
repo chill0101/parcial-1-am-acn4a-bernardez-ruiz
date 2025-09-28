@@ -38,6 +38,7 @@ public class GameMenuActivity extends AppCompatActivity {
         });
 
         // misma animación de fondo que en MainActivity
+        /*
         bgContainer.post(() -> {
             int screenW = getResources().getDisplayMetrics().widthPixels;
 
@@ -61,7 +62,7 @@ public class GameMenuActivity extends AppCompatActivity {
 
             scroll.start();
         });
-
+*/
         // Botones
         Button game1 = findViewById(R.id.game1Button);
         Button game2 = findViewById(R.id.game2Button);

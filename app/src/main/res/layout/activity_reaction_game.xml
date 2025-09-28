@@ -11,7 +11,7 @@
         android:layout_width="@dimen/text_width_max"
         android:layout_height="wrap_content"
         android:layout_marginTop="280dp"
-        android:gravity="start"
+        android:gravity="center"
         android:text="@string/reaction_game_buttongame_instructions"
         android:textColor="#FFFFFF"
         android:textSize="@dimen/text_size_regular"
