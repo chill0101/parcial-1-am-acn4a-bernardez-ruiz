@@ -235,17 +235,21 @@ Desarrollar una aplicación Android utilizando Java que incluya múltiples panta
 
 
 ![Instrucciones del Juego](docs/images/vista-activity_reaction_game_xml-1.png)
+
 **Estado Inicial - Instrucciones**
 
 ![Esperando Señal](docs/images/vista-activity_reaction_game_xml-2.png)
+
 **Estado de Espera**
 
 
 ![Botón de Reacción](docs/images/vista-activity_reaction_game_xml-3.png)
+
 **Estado de Acción**
 
 
 ![Resultado del Tiempo](docs/images/vista-activity_reaction_game_xml-4.png)
+
 **Estado de Resultado**
 
 ---

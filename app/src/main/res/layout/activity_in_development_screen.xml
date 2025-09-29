@@ -8,7 +8,7 @@
     android:padding="@dimen/padding_large"
     android:background="@drawable/bg_gradient_darker">
 
-
+    <!-- Imagen de titulo -->
     <ImageView
         android:id="@+id/titleIcon"
         android:layout_width="@dimen/image_size_large"
