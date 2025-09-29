@@ -9,4 +9,11 @@
     <color name="darkerPurple">#1C1B1F</color>
     <color name="lightPurple">#8A6EDB</color>
 
+    <!-- Colores botones rojo -->
+
+    <color name="tap_button_red">#E53935</color>
+    <color name="tap_button_red_pressed">#C62828</color>
+    <color name="tap_button_border">#AA0000</color>
+
+
 </resources>

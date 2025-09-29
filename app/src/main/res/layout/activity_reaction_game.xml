@@ -22,12 +22,13 @@
 
     <Button
         android:id="@+id/startButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/start_button_width"
+        android:layout_height="@dimen/start_button_height"
         android:layout_marginTop="@dimen/margin_medium"
         android:background="@drawable/button_bg"
         android:backgroundTint="@null"
         android:text="@string/empezar"
+        android:textSize="@dimen/start_button_text_size"
         app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,16 +36,20 @@
 
     <Button
         android:id="@+id/tapButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_bg"
-        android:backgroundTint="@color/design_default_color_error"
+        android:layout_width="@dimen/tap_button_width"
+        android:layout_height="@dimen/tap_button_height"
+        android:background="@drawable/tap_button_bg"
+        android:backgroundTint="@null"
         app:backgroundTint="@null"
         android:text="@string/tocar"
+        android:textSize="@dimen/tap_button_text_size"
+        android:textColor="@android:color/white"
         android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@id/startButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+
 
     <LinearLayout
         android:id="@+id/bottomButtons"

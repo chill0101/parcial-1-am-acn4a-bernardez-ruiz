@@ -26,4 +26,16 @@
     <!-- Images -->
     <dimen name="image_size_large">256dp</dimen>
 
+    <!-- REACTION GAME 1 empeszar!! -->
+
+    <dimen name="start_button_width">180dp</dimen>
+    <dimen name="start_button_height">72dp</dimen>
+    <dimen name="start_button_text_size">22sp</dimen>
+
+
+    <!-- REACTION GAME 1 tocar!! -->
+    <dimen name="tap_button_width">240dp</dimen>
+    <dimen name="tap_button_height">110dp</dimen>
+    <dimen name="tap_button_text_size">30sp</dimen>
+
 </resources>
