@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:padding="@dimen/padding_large"
     android:background="@drawable/bg_gradient_darker">
-
+    <!-- Texto dinamico -->
     <TextView
         android:id="@+id/resultText"
         android:layout_width="@dimen/text_width_max"
@@ -19,7 +19,7 @@
         app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
+    <!-- Boton de empezar -->
     <Button
         android:id="@+id/startButton"
         android:layout_width="@dimen/start_button_width"
@@ -33,7 +33,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/resultText" />
-
+    <!-- Boton rojo del juego -->
     <Button
         android:id="@+id/tapButton"
         android:layout_width="@dimen/tap_button_width"
@@ -50,7 +50,7 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
 
-
+    <!-- Opciones al finalizar -->
     <LinearLayout
         android:id="@+id/bottomButtons"
         android:layout_width="wrap_content"
@@ -63,7 +63,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tapButton"
         app:layout_constraintVertical_bias="0.915">
-
+        <!-- Botones con icono -->
         <ImageButton
             android:id="@+id/restartButton"
             android:layout_width="@dimen/icon_size"

@@ -22,7 +22,7 @@ public class GameMenuActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceState); 
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_game_menu);
 
@@ -38,6 +38,7 @@ public class GameMenuActivity extends AppCompatActivity {
         });
 
         // misma animación de fondo que en MainActivity
+        // Seccion comentada ya que pasamos a fondo gradient
         /*
         bgContainer.post(() -> {
             int screenW = getResources().getDisplayMetrics().widthPixels;
