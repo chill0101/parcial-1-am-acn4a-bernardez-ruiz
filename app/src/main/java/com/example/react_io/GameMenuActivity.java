@@ -76,12 +76,12 @@ public class GameMenuActivity extends AppCompatActivity {
 
         game2.setOnClickListener(v -> {
             // TODO: conectar al Juego 2 cuando esté ready
-            startActivity(new android.content.Intent(GameMenuActivity.this, InDevelopmentActivity.class ));
+            startActivity(new android.content.Intent(GameMenuActivity.this, SequenceGameActivity.class ));
         });
 
         game3.setOnClickListener(v -> {
             // TODO: conectar al Juego 3 cuando esté ready
-            startActivity(new android.content.Intent(GameMenuActivity.this, InDevelopmentActivity.class ));
+            startActivity(new android.content.Intent(GameMenuActivity.this, TapTargetActivity.class));
         });
     }
 }

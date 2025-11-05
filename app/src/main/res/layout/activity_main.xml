@@ -95,6 +95,7 @@
             android:paddingRight="@dimen/padding_xlarge"
             android:paddingBottom="@dimen/padding_medium"
             android:text="@string/empezar"
+            android:textColor="@android:color/white"
             android:textSize="@dimen/text_size_regular" />
     </LinearLayout>
 

@@ -13,6 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.React_io">
 
+        <activity android:name=".SequenceGameActivity" />
+        <activity android:name=".ResultsActivity" />
+        <activity android:name=".TapTargetActivity" android:exported="false" />
+
 
         <activity
             android:name=".GameMenuActivity"

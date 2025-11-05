@@ -12,13 +12,16 @@
 
     <!-- Game list -->
     <string name="game1">PRESIONAR EL BOTÓN!</string>
-    <string name="game2">JUEGO 2</string>
-    <string name="game3">JUEGO 3</string>
+    <string name="game2">SECUENCIA NUMÉRICA</string>
+    <string name="game3">ATRAPA EL OBJETIVO</string>
 
 
     <!-- Messages -->
     <string name="in_development_message">Estamos trabajando duro para lanzar este juego. Mientras tanto, podés disfrutar de los demás!</string>
     <string name="reaction_game_buttongame_instructions">Cuando aparezca el botón ROJO: \nPresionalo lo más rápido que puedas!</string>
+    <string name="sequence_game_instructions">Toca los números en orden ascendente lo más rápido posible.</string>
+    <string name="tap_target_instructions">Atrpá el objetivo 5 veces presionando lo más rápido que puedas!</string>
+
 
     <!-- Content Description -->
     <string name="home">Botón para volver al inicio</string>
@@ -26,5 +29,18 @@
     <string name="user_settings">Configuración de usuario</string>
     <string name="background_gradient">Fondo con colores gradientes</string>
     <string name="working_on_it">Imagen de peresozo trabajando</string>
+
+    <!-- Sequence Game Results -->
+    <string name="results_title">Resultados - Juego %1$s</string>
+    <string name="results_errors">Errores: %1$d</string>
+    <string name="results_time">Tiempo: %1$.2f s</string>
+
+    <!-- Results default -->
+    <string name="results_default_title">Resultados</string>
+    <string name="results_errors_default">Errores: 0</string>
+    <string name="results_time_default">Tiempo: 0.0s</string>
+    <string name="replay">Reintentar</string>
+    <string name="back">Volver</string>
+
 
 </resources>
