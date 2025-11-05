@@ -5,12 +5,15 @@
     <dimen name="margin_small">8dp</dimen>
     <dimen name="margin_medium">16dp</dimen>
     <dimen name="margin_xlarge">32dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
 
     <!-- Padding -->
     <dimen name="padding_small">8dp</dimen>
     <dimen name="padding_medium">16dp</dimen>
     <dimen name="padding_large">24dp</dimen>
     <dimen name="padding_xlarge">32dp</dimen>
+    <dimen name="activity_padding">24dp</dimen>
+
 
     <!-- Icons -->
     <dimen name="icon_size">64dp</dimen>

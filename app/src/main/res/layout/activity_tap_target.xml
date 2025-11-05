@@ -5,90 +5,78 @@
     android:layout_height="match_parent"
     android:padding="@dimen/padding_large"
     android:background="@drawable/bg_gradient_darker">
-    <!-- Texto dinamico -->
+
     <TextView
         android:id="@+id/resultText"
         android:layout_width="@dimen/text_width_max"
         android:layout_height="wrap_content"
         android:layout_marginTop="280dp"
         android:gravity="center"
-        android:text="@string/reaction_game_buttongame_instructions"
+        android:text="@string/tap_target_instructions"
         android:textColor="#FFFFFF"
         android:textSize="@dimen/text_size_regular"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <!-- Boton de empezar -->
+
     <Button
         android:id="@+id/startButton"
         android:layout_width="@dimen/start_button_width"
-        android:layout_height="@dimen/start_button_height"
-        android:layout_marginTop="@dimen/margin_medium"
-        android:background="@drawable/button_bg"
-        android:backgroundTint="@null"
+        android:layout_height="wrap_content"
         android:text="@string/empezar"
+        android:background="@drawable/button_bg"
         android:textColor="@android:color/white"
-        android:textSize="@dimen/start_button_text_size"
-        app:backgroundTint="@null"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/margin_medium"
+        app:layout_constraintTop_toBottomOf="@id/resultText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/resultText" />
-    <!-- Boton rojo del juego -->
-    <Button
-        android:id="@+id/tapButton"
-        android:layout_width="@dimen/tap_button_width"
-        android:layout_height="@dimen/tap_button_height"
-        android:background="@drawable/tap_button_bg"
-        android:backgroundTint="@null"
-        app:backgroundTint="@null"
-        android:text="@string/tocar"
-        android:textSize="@dimen/tap_button_text_size"
-        android:textColor="@android:color/white"
-        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <GridLayout
+        android:id="@+id/gridNumbers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:columnCount="3"
+        android:rowCount="3"
         app:layout_constraintTop_toBottomOf="@id/startButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
-
-    <!-- Opciones al finalizar -->
     <LinearLayout
         android:id="@+id/bottomButtons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tapButton"
-        app:layout_constraintVertical_bias="0.915">
-        <!-- Botones con icono -->
+        app:layout_constraintTop_toBottomOf="@id/gridNumbers"
+        android:layout_marginBottom="@dimen/margin_large">
+
         <ImageButton
             android:id="@+id/restartButton"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
             android:layout_marginEnd="124dp"
             android:background="@drawable/button_bg"
-            android:backgroundTint="@null"
             android:contentDescription="@string/restart"
             android:padding="@dimen/padding_small"
             android:scaleType="centerInside"
-            android:src="@drawable/ic_again"
-            app:backgroundTint="@null" />
+            android:src="@drawable/ic_again" />
 
         <ImageButton
             android:id="@+id/homeButton"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
             android:background="@drawable/button_bg"
-            android:backgroundTint="@null"
             android:contentDescription="@string/home"
             android:padding="@dimen/padding_small"
             android:scaleType="centerInside"
-            android:src="@drawable/ic_home"
-            app:backgroundTint="@null" />
+            android:src="@drawable/ic_home" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

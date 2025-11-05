@@ -1,5 +1,6 @@
 package com.example.react_io;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -62,19 +63,21 @@ public class ReactionGameActivity extends AppCompatActivity {
     private void tapNow() {
         if (!waiting) {
             long reactionTime = System.currentTimeMillis() - startTime;
-            resultText.setText("Tu tiempo: " + reactionTime + " ms");
-            tapButton.setVisibility(View.INVISIBLE);
-            restartButton.setVisibility(View.VISIBLE);
-            homeButton.setVisibility(View.VISIBLE);
+            // Abrimos resultsActivity con el tiempo registrado
+            Intent i = new Intent(ReactionGameActivity.this, ResultsActivity.class);
+            i.putExtra("game", "reaction");
+            i.putExtra("errors", 0);
+            i.putExtra("time", reactionTime);
+            startActivity(i);
+            finish();
         } else {
-            resultText.setText("Algo hiciste mal ._.");
+            // El usuario tocó demasiado pronto (esto ya no sucede)
+            Intent i = new Intent(ReactionGameActivity.this, ResultsActivity.class);
+            i.putExtra("game", "reaction");
+            i.putExtra("errors", 1);
+            i.putExtra("time", 0L); // 0 ms porque falló
+            startActivity(i);
+            finish();
         }
     }
 }
-
-// TODO: AGREGAR BOTON PA OLVER ATRAS, POR QUE SINO TENES QUE CERRAR LA APP MIRA QUE OPORTUNO JAJAJA // DONE
-// TODO:  QUE GUARDE LAST TIME, POR QUE SINO MUCHO SENTIDO NO TIENE, ESTARIA BUENO PONER UN RAKING NO TIPO RPEFEDIFINIDOS PARA QUE TE DE UNA MEDALLA IDK
-// TODO: NO INMOLARME
-
-// TODO: Implement color logic instead button
-

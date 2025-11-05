@@ -87,6 +87,7 @@
             app:backgroundTint="@null"
             android:backgroundTint="@null"
             android:text="@string/game1"
+            android:textColor="@android:color/white"
             android:textSize="@dimen/text_size_regular"
             android:layout_marginBottom="@dimen/margin_medium"
             android:gravity="center_vertical"
@@ -100,6 +101,8 @@
             app:backgroundTint="@null"
             android:backgroundTint="@null"
             android:text="@string/game2"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_regular"
             android:layout_marginBottom="@dimen/margin_medium"
             android:gravity="center_vertical"
             />
@@ -112,6 +115,9 @@
             app:backgroundTint="@null"
             android:backgroundTint="@null"
             android:text="@string/game3"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_regular"
+            android:layout_marginBottom="@dimen/margin_medium"
             android:gravity="center_vertical"
             />
 
