@@ -22,10 +22,15 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity {
 
     private FrameLayout bgContainer;
     private ImageView bg1, bg2;
+
+    private FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(bars.left, bars.top, bars.right, bars.bottom);
             return insets;
         });
+
+        // No sabía bien si esto va acá o más adelante
+        mAuth = FirebaseAuth.getInstance();
 
 
         // Configurar animación después de que el layout mida la pantalla
