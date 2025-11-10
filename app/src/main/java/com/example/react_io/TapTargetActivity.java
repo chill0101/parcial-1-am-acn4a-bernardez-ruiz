@@ -4,13 +4,17 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.react_io.services.GameDataService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -140,11 +144,39 @@ public class TapTargetActivity extends AppCompatActivity {
         handler.removeCallbacksAndMessages(null);
         long elapsedTime = System.currentTimeMillis() - startTime;
 
+        // 1) GUARDAR SCORE ANTES DE IR A RESULTADOS:
+        gameFinished(startTime, errors, "TapTarget");
+
+        // 2) NAVEGAR A RESULTADOS:
         Intent i = new Intent(TapTargetActivity.this, ResultsActivity.class);
         i.putExtra("game", "taptarget");
         i.putExtra("errors", errors);
         i.putExtra("time", elapsedTime);
         startActivity(i);
         finish();
+    }
+
+    private void gameFinished(long startTime, int errors, String gameName) {
+        long endTime = System.currentTimeMillis();
+        long gameTimeInMillis = endTime - startTime;
+
+        GameDataService gameDataService = new GameDataService();
+        gameDataService.saveGameScore(
+                gameTimeInMillis,
+                errors,
+                gameName,
+                new GameDataService.GameDataCallback() {
+                    @Override
+                    public void onSuccess() {
+                        Log.d("GameDataService", "Puntuación guardada correctamente (" + gameName + ")");
+                        Toast.makeText(getApplicationContext(), "Puntuación guardada!", Toast.LENGTH_SHORT).show();
+                    }
+                    @Override
+                    public void onFailure(String error) {
+                        Log.e("GameDataService", "Error al guardar puntuación: " + error);
+                        Toast.makeText(getApplicationContext(), "Error al guardar: " + error, Toast.LENGTH_SHORT).show();
+                    }
+                }
+        );
     }
 }

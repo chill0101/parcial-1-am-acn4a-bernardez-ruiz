@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lazyPurple"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+
+    <!-- AppBar para el título -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/lazyPurple"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Ranking"
+            app:titleTextColor="@color/white"
+            android:background="@color/lazyPurple"
+            />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Contenedor principal -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/lazyPurple"
+        android:padding="16dp">
+
+        <!-- Spinner estilizado usando tus colores -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/spinnerGameTypeLayout"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="Filtrar por juego"
+            app:boxStrokeColor="@color/lightPurple"
+            app:boxBackgroundColor="@color/lazyPurple"
+            app:boxStrokeWidth="2dp"
+            app:hintTextColor="@color/lightPurple">
+
+            <AutoCompleteTextView
+                android:id="@+id/spinnerGameType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:textColor="@color/white"
+                android:background="@android:color/transparent"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- RecyclerView para la lista -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvLeaderboard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:scrollbars="vertical"
+            android:background="@color/lazyPurple" />
+    </LinearLayout>
+</LinearLayout>
