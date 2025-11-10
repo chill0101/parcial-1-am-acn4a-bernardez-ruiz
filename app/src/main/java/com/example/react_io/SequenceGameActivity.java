@@ -4,15 +4,19 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
+
+import com.example.react_io.services.GameDataService;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -141,6 +145,10 @@ public class SequenceGameActivity extends AppCompatActivity {
         // Penalización por errores
         elapsedTime += errors * ERROR_PENALTY_MS;
 
+        // 1) GUARDAR SCORE ANTES DE IR A RESULTADOS:
+        gameFinished(startTime, errors, "SequenceGame");
+
+        // 2) NAVEGAR A RESULTADOS:
         Intent i = new Intent(SequenceGameActivity.this, ResultsActivity.class);
         i.putExtra("game", "sequence");
         i.putExtra("errors", errors);
@@ -148,4 +156,30 @@ public class SequenceGameActivity extends AppCompatActivity {
         startActivity(i);
         finish();
     }
+
+    private void gameFinished(long startTime, int errors, String gameName) {
+        long endTime = System.currentTimeMillis();
+        long gameTimeInMillis = endTime - startTime;
+
+        GameDataService gameDataService = new GameDataService();
+        gameDataService.saveGameScore(
+                gameTimeInMillis,
+                errors,
+                gameName,
+                new GameDataService.GameDataCallback() {
+                    @Override
+                    public void onSuccess() {
+                        Log.d("GameDataService", "Puntuación guardada correctamente (" + gameName + ")");
+                        Toast.makeText(getApplicationContext(), "Puntuación guardada!", Toast.LENGTH_SHORT).show();
+                    }
+                    @Override
+                    public void onFailure(String error) {
+                        Log.e("GameDataService", "Error al guardar puntuación: " + error);
+                        Toast.makeText(getApplicationContext(), "Error al guardar: " + error, Toast.LENGTH_SHORT).show();
+                    }
+                }
+        );
+    }
+
+
 }

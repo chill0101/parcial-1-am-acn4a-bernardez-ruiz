@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Bg loop background - animation in MainActivity -->
+    <!-- Fondo animado -->
     <FrameLayout
         android:id="@+id/bgContainer"
         android:layout_width="match_parent"
@@ -27,30 +27,27 @@
 
     </FrameLayout>
 
-    <!-- Top content -->
     <LinearLayout
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="@dimen/padding_large">
+        android:padding="32dp">
 
+        <!-- Logo y título -->
         <ImageView
             android:id="@+id/titleIcon"
-            android:layout_width="@dimen/image_size_large"
-            android:layout_height="@dimen/image_size_large"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_gravity="center_horizontal|top"
-            android:layout_marginBottom="@dimen/margin_small"
+            android:layout_marginBottom="8dp"
             android:src="@drawable/reactio_logo" />
 
-        <!-- neon text loquito -->
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/margin_xlarge">
-
-
+            android:layout_marginBottom="32dp">
 
             <!-- border layer / glow -->
             <TextView
@@ -63,7 +60,7 @@
                 android:shadowRadius="32"
                 android:text="@string/app_name"
                 android:textColor="#9D00FF"
-                android:textSize="@dimen/text_size_title1"
+                android:textSize="40sp"
                 android:textStyle="bold" />
 
             <!-- inner layer / white -->
@@ -77,11 +74,48 @@
                 android:shadowRadius="24"
                 android:text="@string/app_name"
                 android:textColor="#FFFFFF"
-                android:textSize="@dimen/text_size_title1"
+                android:textSize="40sp"
                 android:textStyle="bold" />
         </FrameLayout>
 
-        <!-- Botoncito -->
+        <!-- Mensaje de bienvenida -->
+        <TextView
+            android:id="@+id/tvWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¡Bienvenido!"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Botones de navegación -->
+        <Button
+            android:id="@+id/btnProfile"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="Mi Perfil"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btnLeaderboard"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="Tabla de Líderes"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="Cerrar Sesión"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#FF0000"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Botón de empezar a jugar -->
         <Button
             android:id="@+id/btnEmpezar"
             android:layout_width="wrap_content"
@@ -90,13 +124,12 @@
             android:backgroundTint="@null"
             app:backgroundTint="@null"
             android:elevation="28dp"
-            android:paddingLeft="@dimen/padding_xlarge"
-            android:paddingTop="@dimen/padding_medium"
-            android:paddingRight="@dimen/padding_xlarge"
-            android:paddingBottom="@dimen/padding_medium"
-            android:text="@string/empezar"
+            android:paddingLeft="32dp"
+            android:paddingTop="12dp"
+            android:paddingRight="32dp"
+            android:paddingBottom="12dp"
+            android:text="Empezar a Jugar"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/text_size_regular" />
+            android:textSize="20sp" />
     </LinearLayout>
-
 </FrameLayout>

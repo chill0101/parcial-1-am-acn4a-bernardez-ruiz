@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.react_io">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,10 +15,39 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.React_io">
 
-        <activity android:name=".SequenceGameActivity" />
-        <activity android:name=".ResultsActivity" />
-        <activity android:name=".TapTargetActivity" android:exported="false" />
+        <!-- LoginActivity como actividad LAUNCHER principal -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
+        <!-- MainActivity ya NO es LAUNCHER -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
+        <!-- Nuevas activities para el sistema Firebase -->
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".LeaderboardActivity"
+            android:exported="false" />
+
+        <!-- Activities de juegos existentes -->
+        <activity android:name=".SequenceGameActivity"
+            android:exported="false" />
+
+        <activity android:name=".ResultsActivity"
+            android:exported="false" />
+
+        <activity android:name=".TapTargetActivity"
+            android:exported="false" />
 
         <activity
             android:name=".GameMenuActivity"
@@ -31,19 +62,6 @@
         <activity android:name=".InDevelopmentActivity"
             android:exported="false" />
 
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-
-            <intent-filter>
-
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-
-
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>
