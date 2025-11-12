@@ -64,13 +64,13 @@ public class LeaderboardAdapter extends RecyclerView.Adapter<LeaderboardAdapter.
                 int color;
                 switch (position) {
                     case 1:
-                        color = itemView.getContext().getColor(android.R.color.holo_orange_light); // Oro
+                        color = itemView.getContext().getColor(R.color.darkerPurple);
                         break;
                     case 2:
-                        color = itemView.getContext().getColor(android.R.color.darker_gray); // Plata
+                        color = itemView.getContext().getColor(R.color.lightPurple);
                         break;
                     case 3:
-                        color = itemView.getContext().getColor(android.R.color.holo_orange_dark); // Bronce
+                        color = itemView.getContext().getColor(android.R.color.darker_gray);
                         break;
                     default:
                         color = itemView.getContext().getColor(android.R.color.transparent);
