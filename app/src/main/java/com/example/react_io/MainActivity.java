@@ -30,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
     private Button btnLogout, btnProfile, btnLeaderboard;
     private AuthService authService;
 
+    private FirebaseAuth mAuth;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,6 +82,8 @@ public class MainActivity extends AppCompatActivity {
             tvWelcome.setText(welcomeText);
         }
     }
+
+
 
     private void setupAnimations() {
         // Configurar animación después de que el layout mida la pantalla
