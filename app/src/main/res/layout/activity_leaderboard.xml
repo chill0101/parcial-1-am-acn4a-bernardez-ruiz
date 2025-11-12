@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:fitsSystemWindows="true">
 
-    <!-- AppBar para el título -->
+
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
         android:background="@color/lazyPurple"
         android:padding="16dp">
 
-        <!-- Spinner estilizado usando tus colores -->
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/spinnerGameTypeLayout"
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"

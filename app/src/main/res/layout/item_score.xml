@@ -25,7 +25,8 @@
                 android:layout_weight="1"
                 android:text="Juego de Reacción"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@color/darkerPurple"/>
 
             <TextView
                 android:id="@+id/tvTime"
@@ -50,6 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Errores: 2"
+                android:textColor="@color/darkerPurple"
                 android:textSize="14sp" />
 
             <TextView
@@ -58,7 +60,8 @@
                 android:layout_height="wrap_content"
                 android:text="08/11/2025 15:30"
                 android:textSize="12sp"
-                android:textColor="@android:color/darker_gray" />
+
+                android:textColor="@color/darkerPurple" />
 
         </LinearLayout>
 

@@ -30,7 +30,7 @@ public class AuthService {
                     if (task.isSuccessful()) {
                         FirebaseUser firebaseUser = mAuth.getCurrentUser();
                         if (firebaseUser != null) {
-                            // Crear documento de usuario en Firestore
+                            // Crear document de usuario en Firestore
                             User user = new User(firebaseUser.getUid(), email, username);
                             db.collection("users").document(firebaseUser.getUid())
                                     .set(user)
