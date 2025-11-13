@@ -11,6 +11,10 @@ import com.example.react_io.models.User;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Servicio para manejar datos de juego en Firestore. Guarda los scores de cada juego y obtiene los datos de leaderboard.
+ * TODO: Remover los logs antes de entregar D:
+ */
 public class GameDataService {
     private static final String TAG = "GameDataService";
     private FirebaseFirestore db;
@@ -37,14 +41,19 @@ public class GameDataService {
             callback.onFailure("Usuario no autenticado");
             return;
         }
+        Log.d(TAG, "UID al guardar: " + currentUser.getUid());
+        Log.d(TAG, "[saveGameScore] UID: " + currentUser.getUid() + ", time: " + timeInMillis + ", errors: " + errors + ", gameType: " + gameType);
 
-        // Obtener username del usuario
+
+        // GET username
         db.collection("users").document(currentUser.getUid())
                 .get()
                 .addOnSuccessListener(documentSnapshot -> {
+                    Log.d(TAG, "[saveGameScore] getUser SUCCESS?");
                     if (documentSnapshot.exists()) {
                         User user = documentSnapshot.toObject(User.class);
                         String username = user != null ? user.getUsername() : "Usuario";
+                        Log.d(TAG, "[saveGameScore] Username: " + username);
 
                         GameScore gameScore = new GameScore(
                                 currentUser.getUid(),
@@ -53,29 +62,37 @@ public class GameDataService {
                                 errors,
                                 gameType
                         );
+                        Log.d(TAG, "[saveGameScore] Instancia de juegoscore armada");
 
-                        // Guardar en colección de puntuaciones
+                        // Guardar en collection
                         db.collection("gameScores")
                                 .add(gameScore)
                                 .addOnSuccessListener(documentReference -> {
                                     Log.d(TAG, "Puntuación guardada: " + documentReference.getId());
-
-                                    // Actualizar estadísticas del usuario
+                                    Log.d(TAG, "[saveGameScore] SCORE GUARDADO OK id=" + documentReference.getId());
+                                    // Actualizar stats
                                     updateUserStats(currentUser.getUid(), gameScore.getScore());
+                                    Log.d(TAG, "[saveGameScore] Estadísticas de usuario actualizadas");
                                     callback.onSuccess();
                                 })
-                                .addOnFailureListener(e -> {
+                                .addOnFailureListener(e -> { // Error handling
                                     Log.w(TAG, "Error guardando puntuación", e);
+                                    Log.e(TAG, "[saveGameScore] FALLO al guardar score", e);
                                     callback.onFailure("Error al guardar puntuación");
                                 });
+                    } else {
+                        Log.w(TAG, "[saveGameScore] El documento del usuario no existe"); // Error handling
+                        callback.onFailure("Usuario no encontrado");
                     }
+
                 });
     }
 
-    private void updateUserStats(String userId, double currentScore) {
+    private void updateUserStats(String userId, double currentScore) { // Si el score es mejor (es menor), actualizar bestScore del user
         db.collection("users").document(userId)
                 .get()
                 .addOnSuccessListener(documentSnapshot -> {
+
                     if (documentSnapshot.exists()) {
                         User user = documentSnapshot.toObject(User.class);
                         if (user != null) {

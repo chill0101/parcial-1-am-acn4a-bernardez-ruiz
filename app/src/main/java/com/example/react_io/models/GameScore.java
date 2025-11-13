@@ -11,7 +11,7 @@ public class GameScore {
     private Timestamp timestamp;
 
     public GameScore() {
-        // Constructor vacío requerido por Firestore
+        // Constructor para Firestore
     }
 
     public GameScore(String userId, String username, long timeInMillis, int errors, String gameType) {
@@ -23,7 +23,6 @@ public class GameScore {
         this.timestamp = Timestamp.now();
     }
 
-    // Getters y Setters
     public String getUserId() { return userId; }
     public void setUserId(String userId) { this.userId = userId; }
 
@@ -42,8 +41,7 @@ public class GameScore {
     public Timestamp getTimestamp() { return timestamp; }
     public void setTimestamp(Timestamp timestamp) { this.timestamp = timestamp; }
 
-    // Método para calcular puntuación (menor tiempo + menos errores = mejor)
     public double getScore() {
-        return timeInMillis + (errors * 5000); // Cada error suma 5 segundos
+        return timeInMillis + (errors * 5000);
     }
 }

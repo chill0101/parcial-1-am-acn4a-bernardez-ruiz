@@ -1,7 +1,12 @@
 package com.example.react_io;
 
+import static android.content.ContentValues.TAG;
+
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -28,6 +33,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         setupRecyclerView();
         loadUserScores();
+
     }
 
     private void setupRecyclerView() {
@@ -37,9 +43,16 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void loadUserScores() {
+
+        Log.d(TAG, "Iniciando carga de scores...");
+        tvUserStats.setText("Cargando estadísticas...");
+
         gameDataService.getUserScores(new GameDataService.ScoresCallback() {
             @Override
             public void onSuccess(List<GameScore> scores) {
+                Log.d(TAG, "onSuccess: Scores obtenidos (" + scores.size() + ")");
+                Toast.makeText(ProfileActivity.this, "Scores cargados: " + scores.size(), Toast.LENGTH_SHORT).show();
+
                 scoreAdapter.updateScores(scores);
 
                 if (!scores.isEmpty()) {

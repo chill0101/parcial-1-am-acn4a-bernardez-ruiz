@@ -12,6 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+/**
+ * Adapter para completar los scores en la leaderBoard Activity
+ * RecyclerView
+ */
 public class LeaderboardAdapter extends RecyclerView.Adapter<LeaderboardAdapter.LeaderboardViewHolder> {
 
     private List<GameScore> scores = new ArrayList<>();
@@ -59,7 +63,7 @@ public class LeaderboardAdapter extends RecyclerView.Adapter<LeaderboardAdapter.
             tvErrors.setText(String.valueOf(score.getErrors()));
             tvGameType.setText(score.getGameType());
 
-            // Destacar los primeros 3 lugares
+            // Destacar los primeros 3 lugares tipo podio
             if (position <= 3) {
                 int color;
                 switch (position) {

@@ -8,6 +8,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.react_io.adapters.LeaderboardAdapter;
 import com.example.react_io.models.GameScore;
 import com.example.react_io.services.GameDataService;
@@ -22,7 +23,7 @@ public class LeaderboardActivity extends AppCompatActivity {
 
 
     private String[] gameTypesForFilter = {"Juego de Reacción", "Secuencia Numérica", "Atrapar al objetivo"};
-    // Nombres de colección en Firestore
+    // Nombres de colecction en Firestore
     private String[] gameCollections = {"ReactionGame", "SequenceGame", "TapTarget"};
 
     @Override
