@@ -54,7 +54,7 @@ public class SequenceGameActivity extends AppCompatActivity {
     }
 
     private void setupGame() {
-        // Ocultar botones y texto inicial cuando inicia el juego
+        // Ocultar botones y texto inicial cuando inicia el game
         startButton.setVisibility(View.INVISIBLE);
         resultText.setVisibility(View.INVISIBLE);
 
@@ -63,7 +63,7 @@ public class SequenceGameActivity extends AppCompatActivity {
         startTime = System.currentTimeMillis();
 
         List<Integer> numbers = new ArrayList<>();
-        for (int i = 1; i <= 9; i++) {
+        for (int i = 1; i <= 15; i++) {
             numbers.add(i);
         }
         Collections.shuffle(numbers);
@@ -81,6 +81,7 @@ public class SequenceGameActivity extends AppCompatActivity {
             ).mutate();
 
             btn.setBackground(safeOrig);
+            btn.setBackgroundTintList(null);
             btn.setTag(R.id.gridNumbers, safeOrig);
 
             btn.setOnClickListener(new View.OnClickListener() {
@@ -93,6 +94,25 @@ public class SequenceGameActivity extends AppCompatActivity {
 
             grid.addView(btn);
         }
+
+        grid.post(
+            () -> {
+                // Ajustar tamaño de botones según el grid
+                int cols = 5;
+                int rows = 2;
+                int gridWidth = grid.getWidth();
+                int gridHeight = grid.getHeight();
+                int btnSize = Math.min(gridWidth / cols, gridHeight / rows) - 16;
+
+                for (int i = 0; i < grid.getChildCount(); i++) {
+                    Button btn = (Button) grid.getChildAt(i);
+                    GridLayout.LayoutParams params = (GridLayout.LayoutParams) btn.getLayoutParams();
+                    params.width = btnSize;
+                    params.height = btnSize;
+                    params.setMargins(8, 8, 8, 8);
+                    btn.setLayoutParams(params);
+                }
+            });
     }
 
 
@@ -108,7 +128,7 @@ public class SequenceGameActivity extends AppCompatActivity {
             ));
 
             currentTarget++;
-            if (currentTarget > 9) {
+            if (currentTarget > 15) {
                 finishGame();
             }
         } else {

@@ -13,6 +13,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+/**
+ * Adapter para completar los scores en el ProfileActivity
+ * RecyclerView
+ */
 public class ScoreAdapter extends RecyclerView.Adapter<ScoreAdapter.ScoreViewHolder> {
 
     private List<GameScore> scores = new ArrayList<>();

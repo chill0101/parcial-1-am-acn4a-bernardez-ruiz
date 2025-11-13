@@ -5,6 +5,10 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/** *
+ * Activity para mostrar una pantalla de "En desarrollo" con un botón de regreso a la pantalla principal.
+ *
+ */
 public class InDevelopmentActivity extends AppCompatActivity {
 
     private ImageButton homeButton;

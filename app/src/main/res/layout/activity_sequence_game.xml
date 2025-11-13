@@ -4,69 +4,68 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/padding_large"
-    android:background="@drawable/bg_gradient_darker">
+    android:background="@drawable/bg_gradient_darker"
+    android:padding="@dimen/padding_large">
 
-    <!-- Instructions - referenced in SequenceGameActivity as resultText -->
     <TextView
         android:id="@+id/resultText"
-        android:layout_width="@dimen/text_width_max"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="280dp"
-        android:gravity="center"
         android:text="@string/sequence_game_instructions"
+        android:gravity="center"
         android:textColor="#FFFFFF"
         android:textSize="@dimen/text_size_regular"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="8dp"/>
 
-    <!-- Optional start button (not used by current SequenceGameActivity but useful for manual start) -->
     <Button
         android:id="@+id/startButton"
-        android:layout_width="@dimen/start_button_width"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/empezar"
         android:background="@drawable/button_bg"
+        android:backgroundTint="@null"
         android:textColor="@android:color/white"
-        android:layout_marginTop="@dimen/margin_medium"
         app:layout_constraintTop_toBottomOf="@id/resultText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"/>
 
-    <!-- Grid where number buttons are added dynamically (referenced as gridNumbers) -->
     <GridLayout
         android:id="@+id/gridNumbers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_medium"
-        android:columnCount="3"
-        android:rowCount="3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:columnCount="5"
+        android:rowCount="5"
+        android:alignmentMode="alignMargins"
+        android:useDefaultMargins="false"
         app:layout_constraintTop_toBottomOf="@id/startButton"
+        app:layout_constraintBottom_toTopOf="@id/bottomButtons"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
-    <!-- Opciones al finalizar (hidden initially, for consistency with ReactionGameActivity) -->
     <LinearLayout
         android:id="@+id/bottomButtons"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/gridNumbers"
-        android:layout_marginBottom="@dimen/margin_large">
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="32dp">
 
         <ImageButton
             android:id="@+id/restartButton"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
-            android:layout_marginEnd="124dp"
+            android:layout_marginEnd="24dp"
             android:background="@drawable/button_bg"
             android:contentDescription="@string/restart"
             android:padding="@dimen/padding_small"
@@ -83,5 +82,4 @@
             android:scaleType="centerInside"
             android:src="@drawable/ic_home" />
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

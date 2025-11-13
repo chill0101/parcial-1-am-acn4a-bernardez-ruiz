@@ -1,3 +1,6 @@
+// La gestión de repositorios para plugins y dependencias debe estar centralizada aquí.
+// Este archivo está configurado correctamente.
+
 pluginManagement {
     repositories {
         google {

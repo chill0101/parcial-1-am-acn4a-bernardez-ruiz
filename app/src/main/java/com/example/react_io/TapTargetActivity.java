@@ -60,20 +60,29 @@ public class TapTargetActivity extends AppCompatActivity {
     private void setupGrid() {
         grid.removeAllViews();
         buttons.clear();
-        for (int i = 0; i < 9; i++) {
-            Button btn = new Button(this);
-            GridLayout.LayoutParams params = new GridLayout.LayoutParams();
-            params.width = 120; // Aumentar ancho para mejor visibilidad
-            params.height = 120; // Aumentamos el alto también para lo mismo
-            params.setMargins(16, 16, 16, 16); // Spacing
-            btn.setLayoutParams(params);
-            btn.setBackgroundResource(R.drawable.button_bg);
-            btn.setTextColor(Color.WHITE);
-            btn.setTextSize(18);
-            btn.setOnClickListener(this::onButtonClicked);
-            grid.addView(btn);
-            buttons.add(btn);
-        }
+
+
+        grid.post(() -> {
+            int cols = 3, rows = 3;
+            int gridWidth = grid.getWidth();
+            int gridHeight = grid.getHeight();
+            int btnSize = Math.min(gridWidth / cols, gridHeight / rows) - 16;
+
+            for (int i = 0; i < rows * cols; i++) {
+                Button btn = new Button(this);
+                GridLayout.LayoutParams params = new GridLayout.LayoutParams();
+                params.width = btnSize;
+                params.height = btnSize;
+                params.setMargins(8, 8, 8, 8);
+                btn.setLayoutParams(params);
+                btn.setBackgroundResource(R.drawable.button_bg);
+                btn.setTextColor(Color.WHITE);
+                btn.setTextSize(18);
+                btn.setOnClickListener(this::onButtonClicked);
+                grid.addView(btn);
+                buttons.add(btn);
+            }
+        });
     }
 
     private void startGame() {
