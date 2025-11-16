@@ -46,6 +46,12 @@ public class ResultsActivity extends AppCompatActivity {
                 targetActivity = SequenceGameActivity.class;
             } else if ("taptarget".equals(game)) {
                 targetActivity = TapTargetActivity.class;
+            } else if ("lightsequence".equals(game)) {
+                targetActivity = LightSequenceGameActivity.class;
+            } else if ("shapematching".equals(game)) {
+                targetActivity = ShapeMatchingGameActivity.class;
+            } else if ("colorchange".equals(game)) {
+                targetActivity = ColorChangeGameActivity.class;
             }
 
             startActivity(new Intent(ResultsActivity.this, targetActivity));

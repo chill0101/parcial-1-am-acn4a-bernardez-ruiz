@@ -4,7 +4,6 @@ import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -12,13 +11,11 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.example.react_io.services.AuthService;
 
@@ -29,9 +26,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvWelcome;
     private Button btnLogout, btnProfile, btnLeaderboard;
     private AuthService authService;
-
-    private FirebaseAuth mAuth;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,10 +39,10 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
             finish();
-            return;
+            return; // Detiene la ejecución de onCreate para evitar que continúe
         }
 
-        EdgeToEdge.enable(this);
+
         setContentView(R.layout.activity_main);
 
         initViews();
@@ -63,13 +57,16 @@ public class MainActivity extends AppCompatActivity {
         bg2 = findViewById(R.id.bg2);
         tvWelcome = findViewById(R.id.tvWelcome);
         btnLogout = findViewById(R.id.btnLogout);
-        btnProfile = findViewById(R.id.btnProfile);
+        btnProfile = findViewById(R.id.btnMyStats);
         btnLeaderboard = findViewById(R.id.btnLeaderboard);
 
-        View content = findViewById(R.id.content);
-        ViewCompat.setOnApplyWindowInsetsListener(content, (v, insets) -> {
-            Insets bars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(bars.left, bars.top, bars.right, bars.bottom);
+        // ----- LA CORRECCIÓN ESTÁ AQUÍ -----
+        // Se busca el layout principal por su ID correcto: "main"
+        View mainLayout = findViewById(R.id.main);
+        ViewCompat.setOnApplyWindowInsetsListener(mainLayout, (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            // Se aplica el padding para que el contenido no quede debajo de las barras del sistema
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
     }
@@ -78,12 +75,11 @@ public class MainActivity extends AppCompatActivity {
         FirebaseUser currentUser = authService.getCurrentUser();
         if (currentUser != null) {
             String email = currentUser.getEmail();
+            // Muestra el nombre de usuario antes del '@' o "Usuario" si el email es nulo
             String welcomeText = "¡Bienvenido, " + (email != null ? email.split("@")[0] : "Usuario") + "!";
             tvWelcome.setText(welcomeText);
         }
     }
-
-
 
     private void setupAnimations() {
         // Configurar animación después de que el layout mida la pantalla
@@ -125,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         btnProfile.setOnClickListener(v -> {
-            startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+            startActivity(new Intent(MainActivity.this, MyStatsActivity.class));
         });
 
         btnLeaderboard.setOnClickListener(v -> {

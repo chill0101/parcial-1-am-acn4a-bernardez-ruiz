@@ -21,19 +21,21 @@
         android:layout_marginTop="24dp"
         android:layout_marginBottom="8dp"/>
 
+    <!-- Boton de empezar -->
     <Button
         android:id="@+id/startButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/empezar"
+        android:layout_width="@dimen/start_button_width"
+        android:layout_height="@dimen/start_button_height"
+        android:layout_marginTop="@dimen/margin_medium"
         android:background="@drawable/button_bg"
         android:backgroundTint="@null"
+        android:text="@string/empezar"
         android:textColor="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@id/resultText"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="@dimen/start_button_text_size"
+        app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/resultText" />
 
     <GridLayout
         android:id="@+id/gridNumbers"

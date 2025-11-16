@@ -14,6 +14,7 @@
     <string name="game1">PRESIONAR EL BOTÓN!</string>
     <string name="game2">SECUENCIA NUMÉRICA</string>
     <string name="game3">ATRAPA EL OBJETIVO</string>
+    <string name="game4">SECUENCIA DE LUCES</string>
 
 
     <!-- Messages -->
@@ -41,6 +42,16 @@
     <string name="results_time_default">Tiempo: 0.0s</string>
     <string name="replay">Reintentar</string>
     <string name="back">Volver</string>
+    <string name="ranking">Leaderboard</string>
+    <string name="profile">Mis estadísticas</string>
+    <string name="achievements">Logros</string>
+    <string name="filtrar_por_juego">Filtrar por Juego</string>
+    <string name="rules_sequence_game">Presiona \'Iniciar Secuencia\' y repite la secuencia de luces</string>
+    <string name="color_change_game_instructions">"Toca la pantalla cuando cambie de color "</string>
+    <string name="game5">CAMBIO DE COLOR</string>
+    <string name="shape_matching_game_instructions">PRESIONA LA PANTALLA CUANDO LAS FIGURAS COINCIDAN</string>
+    <string name="game6">MATCHING FIGURAS</string>
+    <string name="rules_shape_matching_game">CUANDO LAS FIGURAS MATCHEEN, TOCAR LA PANTALLA!</string>
 
 
 </resources>

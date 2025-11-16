@@ -32,7 +32,7 @@
 
         <!-- Nuevas activities para el sistema Firebase -->
         <activity
-            android:name=".ProfileActivity"
+            android:name=".MyStatsActivity"
             android:exported="false" />
 
         <activity
@@ -48,6 +48,19 @@
 
         <activity android:name=".TapTargetActivity"
             android:exported="false" />
+
+        <activity android:name=".LightSequenceGameActivity" />
+
+        <activity android:name=".ColorChangeGameActivity" />
+
+        <activity android:name=".ShapeMatchingGameActivity" />
+
+
+
+        <activity
+            android:name=".AchievementsActivity"
+            android:exported="false"
+            />
 
         <activity
             android:name=".GameMenuActivity"

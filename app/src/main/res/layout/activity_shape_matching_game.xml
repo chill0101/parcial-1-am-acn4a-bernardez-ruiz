@@ -1,29 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_gradient_darker"
     android:padding="@dimen/padding_large">
 
-    <!-- Instrucciones -->
     <TextView
         android:id="@+id/resultText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/sequence_game_instructions"
+        android:text="@string/rules_shape_matching_game"
         android:textColor="#FFFFFF"
         android:textSize="@dimen/text_size_regular"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="24dp"
-        android:layout_marginBottom="8dp"/>
+        android:layout_marginBottom="8dp" />
 
-
-    <!-- Boton de empezar -->
     <Button
         android:id="@+id/startButton"
         android:layout_width="@dimen/start_button_width"
@@ -39,39 +36,45 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/resultText" />
 
-    <GridLayout
-        android:id="@+id/gridNumbers"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:columnCount="3"
-        android:rowCount="3"
-        android:alignmentMode="alignMargins"
-        android:useDefaultMargins="true"
-        app:layout_constraintTop_toBottomOf="@id/startButton"
+    <ImageView
+        android:id="@+id/targetShapeImageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_circle"
         app:layout_constraintBottom_toTopOf="@id/bottomButtons"
+        app:layout_constraintEnd_toStartOf="@id/changingShapeImageView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"/>
+        app:layout_constraintTop_toBottomOf="@id/startButton" />
 
-    <!-- Botones de acción al finalizar -->
+    <ImageView
+        android:id="@+id/changingShapeImageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="16dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/bottomButtons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/targetShapeImageView"
+        app:layout_constraintTop_toBottomOf="@id/startButton" />
+
     <LinearLayout
         android:id="@+id/bottomButtons"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         android:layout_marginBottom="32dp">
 
         <ImageButton
             android:id="@+id/restartButton"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
-            android:layout_marginEnd="32dp"
+            android:layout_marginEnd="24dp"
             android:background="@drawable/button_bg"
             android:contentDescription="@string/restart"
             android:padding="@dimen/padding_small"
