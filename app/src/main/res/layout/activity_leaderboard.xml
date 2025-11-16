@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lazyPurple"
+    android:background="@drawable/bg_gradient"
     android:orientation="vertical"
     android:fitsSystemWindows="true">
 
@@ -21,7 +21,7 @@
             android:layout_height="?attr/actionBarSize"
             app:title="Ranking"
             app:titleTextColor="@color/white"
-            android:background="@color/lazyPurple"
+
             />
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/lazyPurple"
+        android:background="@drawable/bg_gradient"
         android:padding="16dp">
 
 
@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:hint="Filtrar por juego"
+            android:hint="@string/filtrar_por_juego"
             app:boxStrokeColor="@color/lightPurple"
             app:boxBackgroundColor="@color/lazyPurple"
             app:boxStrokeWidth="2dp"
@@ -63,6 +63,6 @@
             android:layout_height="match_parent"
             android:clipToPadding="false"
             android:scrollbars="vertical"
-            android:background="@color/lazyPurple" />
+             />
     </LinearLayout>
 </LinearLayout>

@@ -1,0 +1,111 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:padding="16dp"
+    android:background="@drawable/bg_gradient_darker">
+
+    <TextView
+        android:id="@+id/txtInstruccion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/rules_sequence_game"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/txtResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <!-- Botón de 'Empezar' -->
+
+        <Button
+            android:id="@+id/btnReintentar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="Reintentar"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <GridLayout
+        android:id="@+id/gridColors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="2"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btnRojo"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/circle_red"
+            android:scaleType="centerCrop"
+            android:background="@null"
+            android:contentDescription="Rojo"
+            android:layout_margin="8dp" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btnVerde"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/circle_green"
+            android:scaleType="centerCrop"
+            android:background="@null"
+            android:contentDescription="Verde"
+            android:layout_margin="8dp" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btnAzul"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/circle_blue"
+            android:scaleType="centerCrop"
+            android:background="@null"
+            android:contentDescription="Azul"
+            android:layout_margin="8dp" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btnAmarillo"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/circle_yellow"
+            android:scaleType="centerCrop"
+            android:background="@null"
+            android:contentDescription="Amarillo"
+            android:layout_margin="8dp" />
+    </GridLayout>
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="@dimen/start_button_width"
+        android:layout_height="@dimen/start_button_height"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:background="@drawable/button_bg"
+        android:backgroundTint="@null"
+        android:text="@string/empezar"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/start_button_text_size"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/resultText" />
+
+</LinearLayout>

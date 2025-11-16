@@ -15,7 +15,7 @@ import com.example.react_io.models.GameScore;
 import com.example.react_io.adapters.ScoreAdapter;
 import java.util.List;
 
-public class ProfileActivity extends AppCompatActivity {
+public class MyStatsActivity extends AppCompatActivity {
     private TextView tvUserStats;
     private RecyclerView rvUserScores;
     private GameDataService gameDataService;
@@ -24,7 +24,7 @@ public class ProfileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_my_stats);
 
         tvUserStats = findViewById(R.id.tvUserStats);
         rvUserScores = findViewById(R.id.rvUserScores);
@@ -51,7 +51,7 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onSuccess(List<GameScore> scores) {
                 Log.d(TAG, "onSuccess: Scores obtenidos (" + scores.size() + ")");
-                Toast.makeText(ProfileActivity.this, "Scores cargados: " + scores.size(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MyStatsActivity.this, "Scores cargados: " + scores.size(), Toast.LENGTH_SHORT).show();
 
                 scoreAdapter.updateScores(scores);
 

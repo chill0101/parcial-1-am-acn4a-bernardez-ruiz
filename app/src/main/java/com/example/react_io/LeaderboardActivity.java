@@ -22,9 +22,24 @@ public class LeaderboardActivity extends AppCompatActivity {
     private LeaderboardAdapter leaderboardAdapter;
 
 
-    private String[] gameTypesForFilter = {"Juego de Reacción", "Secuencia Numérica", "Atrapar al objetivo"};
+    private String[] gameTypesForFilter = {
+            "Juego de Reacción",
+            "Secuencia Numérica",
+            "Atrapar al Objetivo",
+            "Secuencia de Colores",
+            "Cambio de Color",
+            "Matching Figuras",
+
+    };
     // Nombres de colecction en Firestore
-    private String[] gameCollections = {"ReactionGame", "SequenceGame", "TapTarget"};
+    private String[] gameCollections = {
+            "ReactionGame",
+            "SequenceGame",
+            "TapTarget",
+            "LightSequenceGame",
+            "ColorChangeGame",
+            "ShapeMatchingGame",
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
