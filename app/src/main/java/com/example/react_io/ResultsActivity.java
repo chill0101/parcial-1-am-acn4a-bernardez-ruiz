@@ -52,6 +52,8 @@ public class ResultsActivity extends AppCompatActivity {
                 targetActivity = ShapeMatchingGameActivity.class;
             } else if ("colorchange".equals(game)) {
                 targetActivity = ColorChangeGameActivity.class;
+            }else if ("flags".equals(game)) {
+                targetActivity = FlagGameActivity.class;
             }
 
             startActivity(new Intent(ResultsActivity.this, targetActivity));

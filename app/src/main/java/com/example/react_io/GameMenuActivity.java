@@ -25,6 +25,8 @@ public class GameMenuActivity extends AppCompatActivity {
         Button game4Button = findViewById(R.id.game4Button);
         Button game5Button = findViewById(R.id.game5Button);
         Button game6Button = findViewById(R.id.game6Button);
+        Button game7Button = findViewById(R.id.game7Button);
+
 
 
 
@@ -41,6 +43,7 @@ public class GameMenuActivity extends AppCompatActivity {
         game4Button.setOnClickListener(v -> startActivity(new Intent(GameMenuActivity.this, LightSequenceGameActivity.class)));
         game5Button.setOnClickListener(v -> startActivity(new Intent(GameMenuActivity.this, ColorChangeGameActivity.class)));
         game6Button.setOnClickListener(v -> startActivity(new Intent(GameMenuActivity.this, ShapeMatchingGameActivity.class)));
+        game7Button.setOnClickListener(v -> startActivity(new Intent(GameMenuActivity.this, FlagGameActivity.class)));
 
         // Listeners para la barra de navegación
         profileButton.setOnClickListener(v -> {

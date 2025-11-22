@@ -194,6 +194,20 @@
                 android:layout_marginBottom="@dimen/margin_medium"
                 android:gravity="center_vertical"/>
 
+            <Button
+                android:id="@+id/game7Button"
+                android:text="ADIVINÀ LA BANDERA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_bg"
+                app:backgroundTint="@null"
+                android:backgroundTint="@null"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_regular"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:gravity="center_vertical"/>
+
+
 
 
         </LinearLayout>

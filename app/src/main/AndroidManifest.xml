@@ -55,6 +55,9 @@
 
         <activity android:name=".ShapeMatchingGameActivity" />
 
+        <activity android:name=".FlagGameActivity" />
+
+
 
 
         <activity

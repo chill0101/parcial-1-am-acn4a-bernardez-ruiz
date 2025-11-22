@@ -59,4 +59,15 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
+    // Api de banderitas para el jueguin
+    // HTTP
+    // HTTP client
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+
+    // Carga de imágenes desde URL
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
+
+
 }

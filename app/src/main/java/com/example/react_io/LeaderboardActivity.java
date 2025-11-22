@@ -29,6 +29,7 @@ public class LeaderboardActivity extends AppCompatActivity {
             "Secuencia de Colores",
             "Cambio de Color",
             "Matching Figuras",
+            "Juego de Banderas"
 
     };
     // Nombres de colecction en Firestore
@@ -39,6 +40,7 @@ public class LeaderboardActivity extends AppCompatActivity {
             "LightSequenceGame",
             "ColorChangeGame",
             "ShapeMatchingGame",
+            "FlagGame"
     };
 
     @Override

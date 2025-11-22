@@ -15,6 +15,9 @@
     <string name="game2">SECUENCIA NUMÉRICA</string>
     <string name="game3">ATRAPA EL OBJETIVO</string>
     <string name="game4">SECUENCIA DE LUCES</string>
+    <string name="game7">ADIVINÁ LA BANDERA</string>
+    <string name="flag_game_instructions">Elegí el país correcto lo más rápido posible. Cada error suma penalización al tiempo final.</string>
+
 
 
     <!-- Messages -->
