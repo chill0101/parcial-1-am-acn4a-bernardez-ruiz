@@ -44,7 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="16dp"
-                android:text="Cargando estadísticas..."
+                android:text="@string/my_stats_loading"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
 
@@ -54,7 +54,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mis Puntuaciones"
+            android:text="@string/my_stats_my_scores"
             android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="@color/lightPurple"

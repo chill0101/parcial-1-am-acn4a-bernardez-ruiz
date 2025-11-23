@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/flag_game_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -45,29 +46,62 @@
             android:id="@+id/btnOption1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Opción 1"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="@dimen/margin_medium"
+            android:background="@drawable/button_bg"
+            android:backgroundTint="@null"
+            android:text="@string/opcion1"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/start_button_text_size"
+            app:backgroundTint="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/resultText" />
 
         <Button
             android:id="@+id/btnOption2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Opción 2"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="@dimen/margin_medium"
+            android:background="@drawable/button_bg"
+            android:backgroundTint="@null"
+            android:text="@string/opcion2"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/start_button_text_size"
+            app:backgroundTint="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/resultText" />
 
         <Button
             android:id="@+id/btnOption3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Opción 3"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="@dimen/margin_medium"
+            android:background="@drawable/button_bg"
+            android:backgroundTint="@null"
+            android:text="@string/opcion3"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/start_button_text_size"
+            app:backgroundTint="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/resultText" />
 
         <Button
             android:id="@+id/btnOption4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Opción 4"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="@dimen/margin_medium"
+            android:background="@drawable/button_bg"
+            android:backgroundTint="@null"
+            android:text="@string/opcion4"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/start_button_text_size"
+            app:backgroundTint="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/resultText" />
+
     </LinearLayout>
 
 </LinearLayout>

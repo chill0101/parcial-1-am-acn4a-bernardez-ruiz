@@ -39,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
-            android:text="Reintentar"
+            android:text="@string/replay"
             android:visibility="gone" />
     </LinearLayout>
 
@@ -59,7 +59,7 @@
             android:src="@drawable/circle_red"
             android:scaleType="centerCrop"
             android:background="@null"
-            android:contentDescription="Rojo"
+            android:contentDescription="@string/cdescription_rojo"
             android:layout_margin="8dp" />
 
         <androidx.appcompat.widget.AppCompatImageButton
@@ -69,7 +69,7 @@
             android:src="@drawable/circle_green"
             android:scaleType="centerCrop"
             android:background="@null"
-            android:contentDescription="Verde"
+            android:contentDescription="@string/cdescription_verde"
             android:layout_margin="8dp" />
 
         <androidx.appcompat.widget.AppCompatImageButton
@@ -79,7 +79,7 @@
             android:src="@drawable/circle_blue"
             android:scaleType="centerCrop"
             android:background="@null"
-            android:contentDescription="Azul"
+            android:contentDescription="@string/cdescription_azul"
             android:layout_margin="8dp" />
 
         <androidx.appcompat.widget.AppCompatImageButton
@@ -89,7 +89,7 @@
             android:src="@drawable/circle_yellow"
             android:scaleType="centerCrop"
             android:background="@null"
-            android:contentDescription="Amarillo"
+            android:contentDescription="@string/cdescription_amarillo"
             android:layout_margin="8dp" />
     </GridLayout>
 
