@@ -46,6 +46,7 @@ public class ReactionGameActivity extends AppCompatActivity {
         tapButton.setOnClickListener(v -> tapNow());
     }
 
+    //TODO: CAMBIAR LÓGICA PARA ADAPTARLO AL RESTO DE JUEGOS Y PENALIZAR LOS ERRORES!
     private void startGame() {
         resultText.setText("Espera...");
         startButton.setVisibility(View.INVISIBLE);

@@ -24,7 +24,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Juego de Reacción"
+                android:text="@string/item_score_example_game"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="@color/darkerPurple"/>
@@ -33,7 +33,7 @@
                 android:id="@+id/tvTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2.345s"
+                android:text="@string/item_score_example_time"
                 android:textColor="@color/design_default_color_primary"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -51,7 +51,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Errores: 2"
+                android:text="@string/item_score_example_errors"
                 android:textColor="@color/darkerPurple"
                 android:textSize="14sp" />
 
@@ -59,7 +59,7 @@
                 android:id="@+id/tvDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="08/11/2025 15:30"
+                android:text="@string/item_score_example_timestamp"
                 android:textSize="12sp"
 
                 android:textColor="@color/darkerPurple" />

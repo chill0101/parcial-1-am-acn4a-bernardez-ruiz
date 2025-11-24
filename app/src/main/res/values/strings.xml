@@ -55,6 +55,38 @@
     <string name="shape_matching_game_instructions">PRESIONA LA PANTALLA CUANDO LAS FIGURAS COINCIDAN</string>
     <string name="game6">MATCHING FIGURAS</string>
     <string name="rules_shape_matching_game">CUANDO LAS FIGURAS MATCHEEN, TOCAR LA PANTALLA!</string>
+    <string name="logros">Logros</string>
+    <string name="flechita_izq">←</string>
+    <string name="opcion1">Opción 1</string>
+    <string name="opcion2">Opción 2</string>
+    <string name="opcion3">Opción 3</string>
+    <string name="opcion4">Opción 4</string>
+    <string name="cdescription_amarillo">Amarillo</string>
+    <string name="cdescription_azul">Azul</string>
+    <string name="cdescription_verde">Verde</string>
+    <string name="cdescription_rojo">Rojo</string>
+    <string name="react_io">React.io</string>
+    <string name="main_label1_user_mail">Email</string>
+    <string name="main_label2_password">Contraseña</string>
+    <string name="main_hint_nombre_de_usuario">Nombre de usuario</string>
+    <string name="main_btn_iniciar_sesion">Iniciar Sesión</string>
+    <string name="main_btn_unregistered">¿No tienes cuenta? Regístrate</string>
+    <string name="main_first_text_bienvenido">Bienvenido!</string>
+    <string name="main_btn_principal">Empezar a Jugar</string>
+    <string name="main_btn_my_stats">Mis Estadísticas</string>
+    <string name="main_btn_leaderbord">Tabla de Líderes</string>
+    <string name="main_btn_red_logout">Cerrar Sesión</string>
+    <string name="my_stats_loading">Cargando estadísticas...</string>
+    <string name="my_stats_my_scores">Mis Puntuaciones</string>
+    <string name="item_leaderborad_first">1</string>
+    <string name="item_leaderborad_exampple_usuario123">Usuario123</string>
+    <string name="item_leaderborard_example_game">Juego de Reacción</string>
+    <string name="item_leaderboard_example_secs">2.345s</string>
+    <string name="item_leaderboard_example_errors">2 errores</string>
+    <string name="item_score_example_game">Juego de Reacción</string>
+    <string name="item_score_example_time">2.345s</string>
+    <string name="item_score_example_errors">Errores: 2</string>
+    <string name="item_score_example_timestamp">08/11/2025 15:30</string>
 
 
 </resources>
