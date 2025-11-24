@@ -11,13 +11,69 @@ Desarrollar una aplicación Android utilizando Java que incluya múltiples panta
 
 ## Descripción del Proyecto
 
-**React.io** es una aplicación Android de minijuegos diseñada para entrenar y medir los tiempos de reacción del usuario. La app ofrece diferentes desafíos de velocidad en una interfaz moderna.
+
+## Descripción del Proyecto
+
+**React.io** es una aplicación Android completa de minijuegos diseñada para entrenar y medir los tiempos de reacción del usuario. La app ofrece múltiples desafíos de velocidad y memoria con sistema de puntuaciones, autenticación de usuarios y rankings globales.
 
 ## Equipo
-- **Bernardez Lucas** 
-- **Ruiz Lucas**
+- **Bernardez Lucas** - [@GenomaVR](https://github.com/GenomaVR)
+- **Ruiz Lucas** - [@chill0101](https://github.com/chill0101)
 
-## Funcionalidades Implementadas
+## Estado del Proyecto
+- **Segunda entrega completada** - Noviembre 2024  
+- **8 juegos funcionales** implementados  
+- **Firebase integrado** - Autenticación y base de datos  
+- **API externa** consumida para juego de banderas  
+- **Sistema completo** de puntuaciones y rankings  
+- **Sistema de logros** y estadísticas personales
+
+---
+
+## Juegos Implementados
+
+### 1. **Juego de Reacción** - "¡PRESIONAR EL BOTÓN!"
+- **Objetivo**: Medir el tiempo de reacción al presionar un botón rojo
+- **Mecánica**: Delay aleatorio (2-5 segundos) → Aparece botón rojo → Medir tiempo de respuesta
+- **Puntaje**: Tiempo desde aparición hasta presionar el botón
+
+### 2. **Juego de Secuencia Numérica** - "SECUENCIA NUMÉRICA"
+- **Objetivo**: Presionar números en el orden correcto
+- **Mecánica**: La app muestra una secuencia → El usuario debe presionar correctamente los números que corresponden hasta completar la secuencia
+- **Puntaje**: Tiempo hasta completar la secuencia y precisión (errores cometidos)
+
+### 3. **Juego de Cambio de Color** - "CAMBIO RÁPIDO"
+- **Objetivo**: Reaccionar rápidamente cuando un elemento cambie de color
+- **Mecánica**: Elemento cambia de color → Usuario debe tocar inmediatamente
+- **Puntaje**: Tiempo desde el cambio de color hasta la respuesta
+
+### 4. **Juego de Secuencia de Luces** - "SIMON DICE"
+- **Objetivo**: Repetir patrones de luces en el orden correcto
+- **Mecánica**: Patrón de luces se reproduce → Usuario debe replicarlo
+- **Puntaje**: Tiempo en completar la secuencia y precisión (errores cometidos)
+
+### 5. **Juego de Formas** - "MACH THE SHAPE"
+- **Objetivo**: Identificar y tocar formas específicas rápidamente
+- **Mecánica**: Se muestra forma objetivo → Encontrar entre opciones similares
+- **Puntaje**: Tiempo desde que las figuras matchean hasta que el usuario toca la correcta
+
+### 6. **Juego de Objetivos** - "TAP TARGET"
+- **Objetivo**: Tocar objetivos que aparecen en posiciones aleatorias
+- **Mecánica**: Objetivos aparecen brevemente → Usuario debe tocarlos a tiempo
+- **Puntaje**: Tiempo en alcanzar el objetivo de cantidad de aciertos y precisión (errores cometidos)
+
+### 7. **Juego de Banderas**  - "ADIVINA EL PAÍS"
+- **Objetivo**: Identificar países por sus banderas
+- **Mecánica**: Se muestra bandera → Elegir país correcto entre opciones
+- **API externa**: Consume API REST de banderas para obtener datos actualizados
+- **Puntaje**: Tiempo en responder todas las rondas y precisión (errores cometidos)
+
+### 8. **Más juegos en desarrollo**
+- Sistema escalable preparado para nuevos desafíos
+
+---
+
+## Funcionalidades base Implementadas
 
 ### Pantallas Principales
 1. **MainActivity** - Pantalla de bienvenida con logo y background en loop
@@ -25,13 +81,102 @@ Desarrollar una aplicación Android utilizando Java que incluya múltiples panta
 3. **ReactionGameActivity** - Primer juego prototipo de tiempo de reacción
 4. **InDevelopmentActivity** - Pantalla para juegos en desarrollo, se utiliza al seleccionar juegos no implementados
 
-### Juego 1: "PRESIONAR EL BOTÓN!"
-- **Objetivo**: Medir el tiempo de reacción al presionar un botón rojo. Sirve como primer prototipo funcional, luego se implementarán más juegos y más funcionalidades.
-- **Mecánica**: 
-  - El usuario presiona "Empezar"
-  - Después de un delay aleatorio (2-5 segundos), aparece un botón rojo
-  - El usuario debe presionarlo lo más rápido posible
-  - Se muestra el tiempo de reacción en milisegundos
+## Funcionalidades Avanzadas Implementadas
+
+### Sistema de Autenticación Completo
+- **Registro de usuarios** con email y contraseña
+- **Integración con Firebase Authentication**
+- **Gestión de sesiones** persistentes
+- **Pantalla de bienvenida personalizada** por usuario
+- **PENDING para el final**: Integración con Google Sign-In y encriptación
+
+### Sistema de Puntuaciones y Rankings
+- **Puntuaciones locales** para cada juego
+- **Leaderboard global** con Firebase Firestore
+- **Ranking por juego** individual
+- **Sistema de mejores puntajes** personales
+- **Comparación con otros jugadores**
+- **PENDING para el final**: Implementación de logros
+
+### Estadísticas y Logros
+- **Pantalla "My Stats"** con estadísticas personales
+- **Sistema de achievements** (logros desbloqueables)
+- **Seguimiento de progreso** por juego
+- **Historial de partidas** y mejoras
+
+### Integración con APIs Externas
+- **API de banderas** para contenido dinámico actualizado
+- **Carga de imágenes** con Glide desde URLs
+- **Manejo de conectividad** y estados de carga
+- **Sistema robusto** de manejo de errores de red
+
+---
+
+## Arquitectura Técnica Actualizada
+
+### Estructura de Clases (17 Activities)
+```
+├── MainActivity.java              # Pantalla inicial con verificación de login
+├── LoginActivity.java             # Sistema de autenticación
+├── GameMenuActivity.java          # Menú principal reorganizado
+├── ResultsActivity.java           # Pantalla de resultados unificada
+├── LeaderboardActivity.java       # Rankings globales
+├── MyStatsActivity.java           # Estadísticas personales
+├── AchievementsActivity.java      # Sistema de logros
+│
+├── ReactionGameActivity.java      # Juego original de reacción primera entrega
+├── SequenceGameActivity.java      # Juego de secuencias
+├── ColorChangeGameActivity.java   # Juego de cambio de colores
+├── LightSequenceGameActivity.java # Simon Says
+├── ShapeMatchingGameActivity.java # Juego de formas
+├── TapTargetActivity.java         # Juego de objetivos
+├── FlagGameActivity.java          # Juego de banderas
+│
+└── InDevelopmentActivity.java     # Placeholder para futuros juegos
+```
+
+### Organización de Packages
+
+A partir de la incorporación de firebase, firestore y la API externa, la estructura del proyecto se ha organizado en paquetes:
+
+```
+├── com.example.react_io/
+│   ├── models/          # Clases de datos (User, Score, Achievement)
+│   ├── adapters/        # Adaptadores para RecyclerViews
+│   ├── services/        # Servicios Firebase y API calls
+│   └── *.java          # Activities principales
+```
+
+### Dependencias y Tecnologías
+
+#### Firebase Stack Completo
+```gradle
+// Firebase BoM para gestión de versiones
+implementation(platform("com.google.firebase:firebase-bom:34.5.0"))
+
+// Firebase Authentication - Sistema de login
+implementation("com.google.firebase:firebase-auth")
+
+// Firestore - Base de datos NoSQL para scores y usuarios
+implementation("com.google.firebase:firebase-firestore")
+
+// Firebase Analytics - Tracking de uso
+implementation("com.google.firebase:firebase-analytics")
+
+// Google Sign-In integration
+implementation("com.google.android.gms:play-services-auth:21.2.0")
+```
+
+#### APIs
+```gradle
+// OkHttp para llamadas HTTP a API de banderas
+implementation("com.squareup.okhttp3:okhttp:4.12.0")
+
+// Glide para carga eficiente de imágenes desde URLs
+implementation("com.github.bumptech.glide:glide:4.16.0")
+annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
+```
+
 
 ## Cumplimiento de Requisitos Técnicos
 
@@ -62,12 +207,18 @@ Desarrollar una aplicación Android utilizando Java que incluya múltiples panta
 
 ### Paleta de Colores
 ```xml
+<!-- Colores principales mantenidos -->
 <color name="lazyPurple">#362A5B</color>
 <color name="darkerPurple">#1C1B1F</color>
 <color name="lightPurple">#8A6EDB</color>
-<color name="tap_button_red">#E53935</color>
-```
 
+    <!-- Nuevos colores para juegos específicos -->
+<color name="tap_button_red">#E53935</color>
+<color name="sequence_blue">#2196F3</color>
+<color name="sequence_green">#4CAF50</color>
+<color name="sequence_yellow">#FFEB3B</color>
+<color name="flag_game_accent">#FF5722</color>
+```
 ### Efectos Visuales
 - Gradientes de fondo personalizados
 - Efectos de texto con sombra y glow (neón)
@@ -280,6 +431,32 @@ Desarrollar una aplicación Android utilizando Java que incluya múltiples panta
 ![Pantalla de Desarrollo](docs/images/vista-in-development-screen-xml.png)
 **InDevelopmentActivity - En Desarrollo**
 
+### Nuevas Pantallas Implementadas
+
+#### Sistema de Login
+- **Diseño clean** con campos de email y contraseña
+- **Validación** de campos
+- **Feedback visual** para estados de carga
+- **Navegación fluida** entre login y registro
+
+#### Leaderboards Globales
+- **RecyclerView** para mostrar rankings
+- **Diseño de cards** para cada entrada del ranking
+- **Filtros por juego** individual
+- **Actualización en tiempo real** desde Firebase
+
+#### My Stats (Estadísticas Personales)
+- **Dashboard** con métricas personales
+- **Gráficos visuales** de progreso
+- **Mejores puntajes** por juego
+- **Estadísticas comparativas**
+
+#### Achievements (Sistema de Logros)
+- **Grid de logros** desbloqueables
+- **Progreso visual** hacia siguiente logro
+- **Categorías** por tipo de juego
+- **Recompensas** por completar desafíos
+
 ---
 
 ## Mockup
@@ -300,6 +477,5 @@ El mockup incluye:
 - Flujo de navegación visual
 - Especificaciones de tipografía y espaciado
 ---
-
 
 ## Muchas gracias por el tiempo dedicado a revisar el proyecto! ![Icono de React.io](docs/images/reactio_icon.png)
